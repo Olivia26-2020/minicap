@@ -61,4 +61,8 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_CFLAGS += -DPLATFORM_SDK_VERSION=$(PLATFORM_SDK_VERSION)
 
+ifeq ($(OVERRIDE_PLATFORM_SDK_VERSION), mmb29m)
+LOCAL_CFLAGS += -march=armv7-a -mfpu=neon -mfloat-abi=softfp -flax-vector-conversions
+endif
+
 include $(BUILD_SHARED_LIBRARY)
